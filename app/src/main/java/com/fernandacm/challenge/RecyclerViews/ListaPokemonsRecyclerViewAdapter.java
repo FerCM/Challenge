@@ -4,24 +4,11 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
 import androidx.annotation.NonNull;
-import androidx.navigation.fragment.NavHostFragment;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.bumptech.glide.Glide;
-import com.fernandacm.challenge.Models.Ability;
 import com.fernandacm.challenge.Models.Pokemon;
-import com.fernandacm.challenge.Models.Types;
-
 import java.util.List;
-
-
-/**
- * Created by ERodriguezF on 18/12/2017.
- * @author ERodriguezF
- * @version 1.18
- */
 
 public class ListaPokemonsRecyclerViewAdapter extends RecyclerView.Adapter<ListaPokemonViewHolder>{
 
@@ -35,8 +22,6 @@ public class ListaPokemonsRecyclerViewAdapter extends RecyclerView.Adapter<Lista
         this.items = items;
         this.listener = listener;
         this.context = context;
-
-       // this.listener = listener;
     }
     @NonNull
     @Override
@@ -48,15 +33,15 @@ public class ListaPokemonsRecyclerViewAdapter extends RecyclerView.Adapter<Lista
 
     @Override
     public void onBindViewHolder(@NonNull ListaPokemonViewHolder holder, int position) {
-      // System.out.println("Position: " + position);
-      //  System.out.println("https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/"+(position + 1)+".png");
         Glide.with(context).load("https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/"+ items.get(position).getId() +".png" ).into(holder.getIconImageView());
         holder.getNameTextView().setText(items.get(position).getName());
         holder.getIdTextView().setText("#"+items.get(position).getId());
-        String types;
-        for(int i = 0; i<items.get(position).getTypes().size(); i++){
-            System.out.println(items.get(position).getTypes().get(i));
+        String types = "Types:";
+        for (int i = 0; i<items.get(position).getTypes().size(); i++){
+            System.out.println( items.get(position).getTypes().get(i).getType().getName());
+            types += " " + items.get(position).getTypes().get(i).getType().getName() ;
         }
+        holder.getTypesTextView().setText(types);
         holder.getCardView().setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -64,8 +49,6 @@ public class ListaPokemonsRecyclerViewAdapter extends RecyclerView.Adapter<Lista
                 listener.onClick(context,items.get(position));
             }
         });
-
-
     }
 
     @Override
