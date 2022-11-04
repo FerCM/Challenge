@@ -1,24 +1,23 @@
 package com.fernandacm.challenge.Models;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
-import java.util.ArrayList;
+import io.objectbox.annotation.Entity;
+import io.objectbox.annotation.Transient;
 
+@Entity
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Types {
-    private int slot;
-    private ArrayList<Type> type;
+    @io.objectbox.annotation.Id( assignable = true)
+    public long Id_BD_types;
 
-    public int getSlot() {
-        return slot;
-    }
+    @Transient
+    private  Type type;
 
-    public void setSlot(int slot) {
-        this.slot = slot;
-    }
-
-    public ArrayList<Type> getType() {
+    public Type getType() {
         return type;
     }
 
-    public void setType(ArrayList<Type> type) {
+    public void setType(Type type) {
         this.type = type;
     }
 }

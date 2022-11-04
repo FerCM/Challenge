@@ -1,0 +1,216 @@
+{
+  "_note1": "KEEP THIS FILE! Check it into a version control system (VCS) like git.",
+  "_note2": "ObjectBox manages crucial IDs for your object model. See docs for details.",
+  "_note3": "If you have VCS merge conflicts, you must resolve them according to ObjectBox docs.",
+  "entities": [
+    {
+      "id": "3:6243131194160898504",
+      "lastPropertyId": "7:2974037486500893865",
+      "name": "Pokemon",
+      "properties": [
+        {
+          "id": "1:6482786130153127517",
+          "name": "Id_BD",
+          "type": 6,
+          "flags": 129
+        },
+        {
+          "id": "2:3363748511510523836",
+          "name": "id",
+          "indexId": "5:4224214364190837609",
+          "type": 5,
+          "flags": 8
+        },
+        {
+          "id": "3:5717223292311270294",
+          "name": "name",
+          "indexId": "6:6229724461066385066",
+          "type": 9,
+          "flags": 2048
+        },
+        {
+          "id": "4:2178630037839982895",
+          "name": "order",
+          "indexId": "7:1891740412321865982",
+          "type": 5,
+          "flags": 8
+        },
+        {
+          "id": "5:6271110749960713777",
+          "name": "base_experience",
+          "indexId": "8:4034139784171946694",
+          "type": 5,
+          "flags": 8
+        },
+        {
+          "id": "6:5621076972587591731",
+          "name": "height",
+          "indexId": "9:1014672285142883991",
+          "type": 5,
+          "flags": 8
+        },
+        {
+          "id": "7:2974037486500893865",
+          "name": "weight",
+          "indexId": "10:8297318982332239791",
+          "type": 5,
+          "flags": 8
+        }
+      ],
+      "relations": [
+        {
+          "id": "1:7137311009224767577",
+          "name": "types",
+          "targetId": "5:2713753370916039171"
+        },
+        {
+          "id": "3:8572808533382285767",
+          "name": "stats",
+          "targetId": "7:6502812686040466137"
+        }
+      ]
+    },
+    {
+      "id": "4:4879075624799529017",
+      "lastPropertyId": "4:9147160589893470407",
+      "name": "Type",
+      "properties": [
+        {
+          "id": "1:678854341625418215",
+          "name": "Id_BD_type",
+          "type": 6,
+          "flags": 129
+        },
+        {
+          "id": "2:7606072916155358544",
+          "name": "name",
+          "indexId": "11:9133876489672003861",
+          "type": 9,
+          "flags": 2048
+        },
+        {
+          "id": "4:9147160589893470407",
+          "name": "id_pok",
+          "indexId": "14:2063312518682948243",
+          "type": 5,
+          "flags": 8
+        }
+      ],
+      "relations": []
+    },
+    {
+      "id": "5:2713753370916039171",
+      "lastPropertyId": "2:3631715043826926730",
+      "name": "Types",
+      "properties": [
+        {
+          "id": "1:7735898566137517049",
+          "name": "Id_BD_types",
+          "type": 6,
+          "flags": 129
+        }
+      ],
+      "relations": []
+    },
+    {
+      "id": "6:4385568254111104520",
+      "lastPropertyId": "6:4554928958769163206",
+      "name": "Stat",
+      "properties": [
+        {
+          "id": "2:9187208252936856762",
+          "name": "id_pokemon",
+          "indexId": "15:5910220054832114516",
+          "type": 5,
+          "flags": 8
+        },
+        {
+          "id": "3:3202982327711159410",
+          "name": "name",
+          "indexId": "16:2433314685549042142",
+          "type": 9,
+          "flags": 2048
+        },
+        {
+          "id": "4:4245070153534932797",
+          "name": "Id_BD_stat",
+          "type": 6,
+          "flags": 129
+        },
+        {
+          "id": "6:4554928958769163206",
+          "name": "id_pokemon_base",
+          "indexId": "20:139061575705222306",
+          "type": 5,
+          "flags": 8
+        }
+      ],
+      "relations": []
+    },
+    {
+      "id": "7:6502812686040466137",
+      "lastPropertyId": "5:324547620040166726",
+      "name": "Stats",
+      "properties": [
+        {
+          "id": "2:8823567690817885182",
+          "name": "base_stat",
+          "indexId": "17:2872301370370357981",
+          "type": 5,
+          "flags": 8
+        },
+        {
+          "id": "4:896646947330220200",
+          "name": "Id_BD_starts",
+          "type": 6,
+          "flags": 129
+        },
+        {
+          "id": "5:324547620040166726",
+          "name": "effort",
+          "indexId": "18:7755523763465407580",
+          "type": 5,
+          "flags": 8
+        }
+      ],
+      "relations": []
+    }
+  ],
+  "lastEntityId": "7:6502812686040466137",
+  "lastIndexId": "20:139061575705222306",
+  "lastRelationId": "3:8572808533382285767",
+  "lastSequenceId": "0:0",
+  "modelVersion": 5,
+  "modelVersionParserMinimum": 5,
+  "retiredEntityUids": [
+    4105668819136947453,
+    50011009005113953
+  ],
+  "retiredIndexUids": [
+    166238850013957793,
+    1674698666459162671,
+    7127812420767974792,
+    2257544552358276664,
+    8725880344734422018,
+    1544225174430269588,
+    4796232994183550773
+  ],
+  "retiredPropertyUids": [
+    3631715043826926730,
+    713909437439523847,
+    3540393302511610371,
+    3932597891936379289,
+    8127531030702227984,
+    1233072625134244046,
+    6045287379082059006,
+    8796401614231118768,
+    4766883532599234739,
+    5177248970868593019,
+    1350397148872255489,
+    1418443732998961931
+  ],
+  "retiredRelationUids": [
+    5350579271122785338
+  ],
+  "version": 1
+}

@@ -1,38 +1,34 @@
 package com.fernandacm.challenge;
 
+import static com.google.android.material.internal.ContextUtils.getActivity;
+
 import android.Manifest;
 import android.os.Bundle;
-
-import com.google.android.material.snackbar.Snackbar;
-
 import androidx.appcompat.app.AppCompatActivity;
-
-import android.view.View;
-
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
+import com.fernandacm.challenge.Models.ObjectBox;
 import com.fernandacm.challenge.databinding.ActivityMainBinding;
-
 import android.view.Menu;
 import android.view.MenuItem;
-
 import pub.devrel.easypermissions.EasyPermissions;
 
 public class MainActivity extends AppCompatActivity {
 
     private AppBarConfiguration appBarConfiguration;
     private ActivityMainBinding binding;
-
-    @Override
+     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        //Inicializamos la BD
+        ObjectBox.init(this);
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+        //ObjectBox.init(this);
         setSupportActionBar(binding.toolbar);
         String[] perms = {Manifest.permission.ACCESS_NETWORK_STATE,Manifest.permission.INTERNET,Manifest.permission.RECEIVE_BOOT_COMPLETED,Manifest.permission.ACCESS_WIFI_STATE};//READ_CONTACTS};
         if (!EasyPermissions.hasPermissions(this, perms)) {

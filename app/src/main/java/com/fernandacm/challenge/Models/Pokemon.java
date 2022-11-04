@@ -4,23 +4,30 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import java.util.List;
 
+import io.objectbox.annotation.Entity;
+import io.objectbox.annotation.Index;
+
+@Entity
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Pokemon {
     //@JSON(name = "name")
+    @io.objectbox.annotation.Id( assignable = true)
+    public long Id_BD;
+    @Index
     int id;
+    @Index
     String name;
-    String url;
+    @Index
     int order;
-    private List types;
-    private List abilities;
+    private List<Types> types;
+    private List<Stats> stats;
+    @Index
     private int base_experience;
+    @Index
     private int height;
+    @Index
     private int weight;
-    //Falta Especies
-
-
-
-    public int getId() {
+     public int getId() {
         return id;
     }
 
@@ -28,11 +35,11 @@ public class Pokemon {
         this.id = id;
     }
 
-    public List getTypes() {
+    public List<Types> getTypes() {
         return types;
     }
 
-    public void setTypes(List types) {
+    public void setTypes(List<Types> types) {
         this.types = types;
     }
 
@@ -44,12 +51,12 @@ public class Pokemon {
         this.order = order;
     }
 
-    public List getAbilities() {
-        return abilities;
+    public List<Stats> getStats() {
+        return stats;
     }
 
-    public void setAbilities(List abilities) {
-        this.abilities = abilities;
+    public void setStats(List<Stats> stats) {
+        this.stats = stats;
     }
 
     public String getName() {
@@ -59,16 +66,6 @@ public class Pokemon {
     public void setName(String name) {
         this.name = name;
     }
-
-    public String getUrl() {
-        return url;
-    }
-
-    public void setUrl(String url) {
-        this.url = url;
-    }
-
-
 
     public int getBase_experience() {
         return base_experience;

@@ -1,10 +1,9 @@
 plugins {
     id 'com.android.application'
+    id("io.objectbox")
 }
-
 android {
     compileSdk 32
-
     defaultConfig {
         applicationId "com.fernandacm.challenge"
         minSdk 21
@@ -58,5 +57,6 @@ dependencies {
     implementation 'com.squareup.retrofit2:converter-jackson:2.3.0'
     implementation 'com.jakewharton:butterknife:10.0.0'
     annotationProcessor 'com.jakewharton:butterknife-compiler:10.0.0'
+
   //  implementation 'com.github.EudyContreras.Skeleton-Bones:v1.3'
 }

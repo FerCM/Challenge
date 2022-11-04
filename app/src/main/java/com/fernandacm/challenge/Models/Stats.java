@@ -1,19 +1,21 @@
 package com.fernandacm.challenge.Models;
 
-import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+import java.io.Serializable;
 import io.objectbox.annotation.Entity;
 import io.objectbox.annotation.Index;
 import io.objectbox.annotation.Transient;
 
 @Entity
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Stats implements Serializable {
     @io.objectbox.annotation.Id( assignable = true)
-    public long Id_BD_abilities;
+    public long Id_BD_starts;
+    @Index
     int base_stat;
-    int effot;
+    @Index
+    int effort;
 
     @Transient
     private Stat stat;
@@ -26,12 +28,12 @@ public class Stats implements Serializable {
         this.base_stat = base_stat;
     }
 
-    public int getEffot() {
-        return effot;
+    public int getEffort() {
+        return effort;
     }
 
-    public void setEffot(int effot) {
-        this.effot = effot;
+    public void setEffort(int effort) {
+        this.effort = effort;
     }
 
     public Stat getStat() {

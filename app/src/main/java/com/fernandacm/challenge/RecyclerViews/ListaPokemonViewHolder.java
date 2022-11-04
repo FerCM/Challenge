@@ -1,4 +1,4 @@
-package com.fernandacm.challenge;
+package com.fernandacm.challenge.RecyclerViews;
 
 import android.view.View;
 import android.widget.ImageView;
@@ -6,6 +6,8 @@ import android.widget.TextView;
 
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.fernandacm.challenge.R;
 
 public class ListaPokemonViewHolder extends RecyclerView.ViewHolder{
 

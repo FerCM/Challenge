@@ -48,18 +48,18 @@ public class ApInteractor implements Interactor {
             @Override
             public void onResponse(Call<Pokemon> call, Response<Pokemon> response) {
               if(response.isSuccessful()){
-                // System.out.println("Ya funciona?? " +  response.body().getAbilities());
                     presenter.onDetailSucess(response.body());
-                                    }
-                                    else{
-                                        //System.out.println("Error en detalle pokemon : " + response);
-                                        presenter.onDetailError();
-                                    }
+              }
+              else{
+                  System.out.println("Error " + response);
+                  presenter.onDetailError();
+              }
             }
             @Override
             public void onFailure(Call<Pokemon> call, Throwable t) {
-             //  System.out.println("ERRROOOOOOOOOOOOOOOOORaki : " + t.getMessage());
-                   presenter.onDetailError();
+
+                System.out.println("Error get pokemons : " + t.getMessage());
+                presenter.onDetailError();
             }
         });
     }
